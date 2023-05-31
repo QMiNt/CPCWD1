@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" name="" id="inp">
+    <button id="sub">Submit</button>
+  </body>
+  <script>
+    document.getElementById("sub").addEventListener("click",()=>{
+        let x = document.getElementById("inp").value;
+        fetch("http://10.21.80.115:3000",{
+            method:"POST",
+            body:JSON.stringify({ 
+                exp : x
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            } 
+        })
+    })
+    
+  </script>
+</html>
